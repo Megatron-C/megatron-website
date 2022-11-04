@@ -15,7 +15,7 @@
           "
         >
           Design & <br />
-          Development
+          Development.
         </h1>
         <p class="text-center font-light max-w-[950px]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
