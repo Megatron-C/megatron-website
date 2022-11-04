@@ -1,0 +1,51 @@
+@import url('http://fonts.cdnfonts.com/css/druk-trial');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Fonts */
+.font-durk-trail {
+font-family: 'Druk Trial', sans-serif;
+}
+.font-durk-text-trail {
+font-family: 'Druk Text Trial', sans-serif;
+}
+.font-druk-text-wide-trial {
+font-family: 'Druk Text Wide Trial', sans-serif;
+}
+.font-druk-wide-trial {
+font-family: 'Druk Wide Trial', sans-serif;
+}
+.font-druk-cond-trial {
+font-family: 'Druk Cond Trial', sans-serif;
+}
+.font-druk-xcond-trial {
+font-family: 'Druk XCond Trial', sans-serif;
+}
+.font-druk-xxcond-trial {
+font-family: 'Druk XXCond Trial', sans-serif;  
+}
+/* -- */
+
+/* project cursor */
+.project-cursor {
+  cursor: url(rightArrow.svg) 0 0, pointer
+}
+/* -- */
+
+/* .font-druk {
+  font-family: 'Druk Trial', sans-serif;
+font-family: 'Druk Text Trial', sans-serif;
+font-family: 'Druk Text Wide Trial', sans-serif;
+font-family: 'Druk Wide Trial', sans-serif;
+font-family: 'Druk Cond Trial', sans-serif;
+font-family: 'Druk XCond Trial', sans-serif;
+font-family: 'Druk XXCond Trial', sans-serif;
+} */
