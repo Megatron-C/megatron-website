@@ -1,7 +1,7 @@
 <template>
   <div class="xl:px-[13%] lg:px-[8%] px-6 py-24">
     <section aria-label="Identification" class="my-28">
-      <div class="flex justify-center pb-28">
+      <div class="pb-28">
         <h1 hidden>Identification</h1>
         <h2
           class="
