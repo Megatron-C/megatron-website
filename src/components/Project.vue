@@ -1,12 +1,26 @@
 <template>
-  <div class="my-16 relative hover:project-cursor">
+  <div
+    class="my-16 relative hover:project-cursor group overflow-hidden"
+    tabindex="0"
+  >
     <div class="aspect-[2/1] relative">
       <img
         class="w-full h-full object-cover"
         src="https://www.lookslikefilm.com/wp-content/uploads/2020/01/Paul-Wilson.jpg"
         alt="project name"
       />
-      <div class="absolute md:z-[2] bottom-2 right-2">
+      <div
+        class="
+          absolute
+          md:z-[2]
+          bottom-2
+          md:-bottom-16
+          group-hover:bottom-2
+          focus-within:bottom-2
+          duration-300
+          right-2
+        "
+      >
         <button aria-label="View Project">
           <div class="text-white hover:text-[#e4623a] duration-300">
             <svg
@@ -56,7 +70,17 @@
       >
         Project Name
       </h3>
-      <p class="text-xl sm:w-[50%]">
+      <p
+        class="
+          text-xl
+          sm:w-[50%]
+          md:absolute
+          bottom-2
+          left-[-150%]
+          group-hover:left-2
+          duration-500
+        "
+      >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto aliquam
         nam unde id maxime amet culpa a omnis magni voluptatum placeat quisquam
         rem labore, ad, modi error exercitationem officiis vitae.

@@ -20,7 +20,7 @@
           <img
             src="/megatronLogo.svg"
             alt="megatron"
-            class="w-44 pointer-events-none"
+            class="w-32 pointer-events-none"
         /></router-link>
       </div>
 
@@ -29,8 +29,8 @@
           <router-link :to="item.link" @click="scrollTop"
             ><div
               class="
-                xl:py-10
-                py-6
+                xl:py-6
+                py-4
                 xl:px-10
                 px-7
                 border border-transparent
@@ -48,8 +48,8 @@
           <router-link to="/contact" @click="scrollTop"
             ><div
               class="
-                xl:py-10
-                py-6
+                xl:py-6
+                py-4
                 xl:px-16
                 px-12
                 border border-transparent

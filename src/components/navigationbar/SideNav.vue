@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bg-[#333] top-0 bottom-0 right-0 duration-500 z-50">
+  <div class="fixed bg-[#000000] top-0 bottom-0 right-0 duration-500 z-50">
     <div class="p-5">
       <button aria-label="hide navigation menu" @click="() => $emit('close')">
         <svg

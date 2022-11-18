@@ -1,33 +1,31 @@
 <template>
-  <div class="xl:px-[13%] lg:px-[8%] px-6 py-24">
-    <section aria-label="Projects">
-      <h1 class="hidden">Projects</h1>
-      <div v-for="project in 4" :key="project">
-        <project />
-      </div>
-    </section>
-  </div>
-  <div class="py-24 bg-slate-400 group flex justify-center">
-    <router-link
-      to="/contact"
-      class="group-hover:border-[#fff] border border-[#fff0] duration-300"
+  <title>What Megatron did</title>
+  <div class="bg-[url(/bgstarstexture.png)] relative">
+    <div class="absolute bottom-4 px-[5vw] md:px-[20vw] w-full">
+      <img src="/bgshape2.png" alt="" class="w-full" />
+    </div>
+    <div class="absolute top-3 px-[25vw] w-full">
+      <img src="/bgshape3.png" alt="" class="w-full" />
+    </div>
+    <div
+      class="
+        from-[#001124a1]
+        to-[#0000009f]
+        bg-gradient-to-b
+        xl:px-[13%]
+        lg:px-[8%]
+        px-6
+        py-24
+        relative
+      "
     >
-      <div
-        class="
-          font-druk-text-wide-trial font-black
-          py-2
-          px-5
-          w-fit
-          mx-auto
-          text-2xl
-          md:text-4xl
-          hover:bg-[#000000c4]
-          duration-500
-        "
-      >
-        Let's Collaborate
-      </div>
-    </router-link>
+      <section aria-label="Projects">
+        <h1 class="hidden">Projects</h1>
+        <div v-for="project in 4" :key="project">
+          <project />
+        </div>
+      </section>
+    </div>
   </div>
   <Footer />
 </template>

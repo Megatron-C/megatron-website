@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[90vh]">
+  <div class="h-[90vh] relative">
     <div class="h-full flex items-center justify-center">
       <div>
         <h1
@@ -24,7 +24,7 @@
           labore, amet nisi repudiandae beatae.
         </p>
       </div>
-      <div class="absolute bottom-6 arrow-bounce">
+      <div class="absolute bottom-1 arrow-bounce">
         <svg
           width="24"
           height="115"
