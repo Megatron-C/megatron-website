@@ -13,7 +13,10 @@
         z-40
         w-full
       "
-      :class="{ 'bg-[#000000ee]': onTop }"
+      :class="{
+        'bg-[#000000ee]': onTop,
+        'bg-[#0000001a]': !onTop,
+      }"
     >
       <div class="py-2">
         <router-link to="/" @click="scrollTop">
@@ -107,6 +110,11 @@ export default {
         { text: "Careers", link: "/careers" },
       ],
     };
+  },
+  computed: {
+    // projectPage() {
+    //   return this.$route.fullPath === "/project/?";
+    // },
   },
   mounted() {
     addEventListener("resize", () => (this.bigScreen = innerWidth > 720));

@@ -21,8 +21,8 @@
     >
       <section aria-label="Projects">
         <h1 class="hidden">Projects</h1>
-        <div v-for="project in 4" :key="project">
-          <project />
+        <div v-for="project in projectsData" :key="project">
+          <project :projectData="project" />
         </div>
       </section>
     </div>
@@ -33,10 +33,30 @@
 <script>
 import Footer from "../components/Footer.vue";
 import Project from "../components/Project.vue";
+import sanity from "../clients/sanity";
+
 export default {
   components: { Project, Footer },
+  data() {
+    return {
+      projectsData: null,
+    };
+  },
   mounted() {
     scrollTo({ top: 0, behavior: "smooth" });
+    this.getData();
+  },
+  methods: {
+    getData() {
+      const query =
+        '*[_type=="project"]{_id,title,description,"coverImageURL": coverImage.asset->url}';
+
+      sanity.fetch(query).then((res) => {
+        this.projectsData = res;
+        // console.log(res);
+        console.log("Done!");
+      });
+    },
   },
 };
 </script>

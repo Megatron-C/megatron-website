@@ -54,7 +54,7 @@
       </router-link>
     </section>
     <footer
-      class="xl:px-[13%] lg:px-[8%] px-6 py-36 bg-[#000425] border-t-2 relative"
+      class="xl:px-[13%] lg:px-[8%] px-6 py-36 bg-[#030303] border-t-2 relative"
     >
       <div class="absolute bottom-0 left-0 h-full">
         <img src="/bgshape6.png" alt="" class="w-full h-full" />

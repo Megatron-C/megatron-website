@@ -21,8 +21,8 @@
       <Hero />
       <section aria-label="Projects" class="py-20">
         <h1 class="hidden">Projects</h1>
-        <div v-for="project in 2" :key="project">
-          <Project />
+        <div v-for="project in projectsData" :key="project._id">
+          <Project :projectData="project" />
         </div>
 
         <div class="flex flex-col md:flex-row justify-between gap-9">
@@ -73,17 +73,36 @@
     </div>
   </div>
   <Footer />
-  <!-- <div class="h-screen"></div> -->
 </template>
 
 <script>
 import Footer from "../components/Footer.vue";
 import Hero from "../components/home/Hero.vue";
 import Project from "../components/Project.vue";
+import sanity from "../clients/sanity";
+
 export default {
   components: { Hero, Project, Footer },
+  data() {
+    return {
+      projectsData: null,
+    };
+  },
   mounted() {
     scrollTo({ top: 0, behavior: "smooth" });
+    this.getData();
+  },
+  methods: {
+    getData() {
+      const query =
+        '*[_type=="project"]{_id,title,description,"coverImageURL": coverImage.asset->url}';
+
+      sanity.fetch(query).then((res) => {
+        this.projectsData = res;
+        // console.log(res);
+        console.log("Done!");
+      });
+    },
   },
 };
 </script>

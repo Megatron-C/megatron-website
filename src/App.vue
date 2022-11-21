@@ -7,7 +7,7 @@ import Navbar from "./components/navigationbar/Navbar.vue";
 </script>
 
 <template>
-  <div class="bg-[#40484b] min-h-screen text-white">
+  <div class="bg-[#181818] min-h-screen text-white">
     <Navbar />
     <router-view />
   </div>
