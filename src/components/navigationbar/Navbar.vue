@@ -15,7 +15,7 @@
       "
       :class="{
         'bg-[#000000ee]': onTop,
-        'bg-[#0000001a]': !onTop,
+        'custom-drop-shadow': !onTop,
       }"
     >
       <div class="py-2">
@@ -85,13 +85,12 @@
             <path d="M0 18H30" stroke="currentColor" stroke-width="3" />
           </svg>
         </button>
-
-        <SideNav
-          :class="{ 'left-[50vw]': sideNav, 'left-[100vw]': !sideNav }"
-          @close="() => (sideNav = !sideNav)"
-        />
       </div>
     </div>
+    <SideNav
+      :class="{ 'left-[50vw]': sideNav, 'left-[100vw]': !sideNav }"
+      @close="() => (sideNav = !sideNav)"
+    />
   </div>
 </template>
 
@@ -133,4 +132,7 @@ export default {
 </script>
 
 <style>
+.custom-drop-shadow {
+  filter: drop-shadow(0.2rem 0.2rem 0.1rem #000000);
+}
 </style>

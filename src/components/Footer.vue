@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <section
-      v-if="show"
+      v-if="showCollaborate"
       class="relative py-24 border-t-2 group flex justify-center"
     >
       <div
@@ -17,9 +17,18 @@
           justify-center
         "
       >
-        <video
+        <!-- <video
           class="min-w-full min-h-full absolute object-cover object-center"
           src="/travelingthroughatunnel.mp4"
+          type="video/mp4"
+          autoplay
+          muted
+          loop
+        ></video> -->
+        <video
+          id="footer_video"
+          class="min-w-full min-h-full absolute object-cover object-center"
+          src="/throughspace.mp4"
           type="video/mp4"
           autoplay
           muted
@@ -45,7 +54,7 @@
             mx-auto
             text-2xl
             md:text-4xl
-            hover:bg-[#000000de]
+            hover:bg-[#242424de]
             duration-500
           "
         >
@@ -59,70 +68,150 @@
       <div class="absolute bottom-0 left-0 h-full">
         <img src="/bgshape6.png" alt="" class="w-full h-full" />
       </div>
-      <div class="relative">
-        <p class="font-druk-wide-trial font-black text-2xl md:text-4xl pb-10">
-          Join our mega weekly emails Designers, Founders & Makers
-        </p>
-        <form @submit.prevent="clk" class="flex flex-col md:flex-row gap-4">
-          <input
-            type="email"
-            placeholder="Email"
-            required
-            v-model="email"
-            class="
-              w-full
-              outline-none
-              bg-transparent
-              text-4xl
-              border-b
-              placeholder-white
-            "
-          />
-          <button type="submit" class="w-fit">
-            <div
+      <div v-if="!showNextButton" class="relative">
+        <div v-if="thankYouMessage">
+          <p class="font-druk-wide-trial text-lg md:text-xl pb-10">
+            Thank You For Signing To Our mega weekly emails
+          </p>
+        </div>
+        <div v-else>
+          <p class="font-druk-wide-trial font-black text-2xl md:text-4xl pb-10">
+            Join our mega weekly emails Designers, Founders & Makers
+          </p>
+          <form
+            @submit.prevent="addEmail"
+            class="flex flex-col md:flex-row gap-4"
+          >
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              v-model="email"
               class="
-                font-durk-trail
-                hover:bg-white hover:text-black
-                border
-                text-white
-                duration-300
-                italic
-                font-bold
+                w-full
+                outline-none
+                bg-transparent
                 text-4xl
-                py-3
-                px-14
-                w-fit
-                min-w-max
-                uppercase
+                border-b
+                placeholder-white
               "
+            />
+            <button
+              type="submit"
+              class="w-fit disabled:pointer-events-none disabled:opacity-75"
+              :disabled="buttonLoading"
             >
-              Sign me up
-            </div>
-          </button>
-        </form>
+              <div
+                class="
+                  font-durk-trail
+                  hover:bg-white hover:text-black
+                  border
+                  text-white
+                  duration-300
+                  italic
+                  font-bold
+                  text-4xl
+                  py-3
+                  px-14
+                  w-fit
+                  min-w-max
+                  uppercase
+                "
+              >
+                Sign me up
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div v-if="showNextButton" class="relative">
+        <p class="font-druk-wide-trial font-black text-2xl md:text-4xl pb-10">
+          Like what you see?
+        </p>
+        <button @click="nextProject" class="z-[2]">
+          <div
+            class="
+              border-[#fff] border
+              font-druk-text-wide-trial font-black
+              py-2
+              px-5
+              w-fit
+              mx-auto
+              text-2xl
+              md:text-4xl
+              hover:bg-[#ffffffde] hover:text-black
+              duration-500
+            "
+          >
+            Next Project
+          </div>
+        </button>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
+import sanity from "../clients/sanity";
+import firebase from "../clients/firebase";
+
 export default {
   data() {
     return {
       email: "",
-      show: true,
+      projectsIds: null,
+      buttonLoading: false,
+      thankYouMessage: false,
     };
   },
+  computed: {
+    showCollaborate() {
+      return this.$route.path !== "/contact";
+    },
+    showNextButton() {
+      return this.$route.matched[0].path === "/project/:id";
+    },
+  },
   mounted() {
-    this.showSection();
+    this.getData();
+    this.setVideoPlaySpeed();
   },
   methods: {
-    clk() {
-      console.log(this.email);
+    getData() {
+      const query = '*[_type=="project"]{_id}';
+
+      if (this.showNextButton) {
+        sanity.fetch(query).then((res) => {
+          this.projectsIds = res;
+        });
+      }
     },
-    showSection() {
-      if (this.$route.path === "/contact") {
-        this.show = false;
+    nextProject() {
+      if (this.projectsIds) {
+        let currentIdIndex = this.projectsIds
+          .map((obj) => obj._id)
+          .indexOf(`${this.$route.params.id}`);
+
+        let next =
+          currentIdIndex + 1 == this.projectsIds.length
+            ? this.projectsIds[0]._id
+            : this.projectsIds[currentIdIndex + 1]._id;
+
+        this.$router.push(`/project/${next}`);
+      }
+    },
+    async addEmail() {
+      this.buttonLoading = true;
+      firebase.addEmail(this.email).then(() => {
+        this.buttonLoading = false;
+        this.email = "";
+        this.thankYouMessage = true;
+      });
+    },
+    setVideoPlaySpeed() {
+      const vid = document.getElementById("footer_video");
+      if (vid) {
+        vid.playbackRate = 0.3;
       }
     },
   },

@@ -13,7 +13,7 @@ const routes = [
   { path: '/careers', component: CareersPage },
   { path: '/about', component: AboutPage },
   { path: '/contact', component: ContactPage },
-  { path: '/project/:id', component: Project },
+  { path: '/project/:id', component: Project},
 ]
 
 const router = createRouter({

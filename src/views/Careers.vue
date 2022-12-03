@@ -53,9 +53,9 @@
             Benefits We Offer
           </h1>
           <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-9">
-            <li v-for="(item, index) in 18" :key="index">
+            <li v-for="item in benefits" :key="item">
               <div class="font-druk-text-wide-trial font-bold">
-                {{ item + " WTF" }}
+                {{ item }}
               </div>
             </li>
           </ul>
@@ -96,7 +96,7 @@
             </p>
           </div>
           <div>
-            <div class="mb-12">
+            <!-- <div class="mb-12">
               <h3 class="uppercase font-druk-text-wide-trial font-bold mb-4">
                 Sign up for job notifications
               </h3>
@@ -118,12 +118,14 @@
                   Subscribe
                 </div>
               </router-link>
-            </div>
+              TO-DO: make it send email to firebase in job notification doc
+            </div> -->
             <div>
               <h3 class="uppercase font-druk-text-wide-trial font-bold mb-4">
-                We are always looking for talent
+                We are always looking for talents
               </h3>
-              <router-link to="/contact">
+
+              <a href="mailto:careers@wearemegatron.com">
                 <div
                   class="
                     font-druk-text-wide-trial font-black
@@ -140,7 +142,8 @@
                 >
                   Get In Touch
                 </div>
-              </router-link>
+              </a>
+              <!-- TO-DO: make is go to mail talent@wearemegatron.com -->
             </div>
           </div>
         </section>
@@ -154,10 +157,32 @@
 import Footer from "../components/Footer.vue";
 
 export default {
+  components: { Footer },
+  data() {
+    return {
+      benefits: [
+        "Head space",
+        "401K & Roth 401K",
+        "Bereavement",
+        "20+ Days of PTO",
+        "Competitive Salary",
+        "Critical Illness Insurance",
+        "Health, Dental, & Vision Insurance",
+        "Basic Life Insurance",
+        "Short & Long Term Disability",
+        "Supplemental Life Insurance",
+        "Hospital Confinement Insurance",
+        "FSA & Dependent Care FSA",
+        "Maternity / Paternity / Adoption Leave",
+        "Quarterly Profit Sharing",
+        "Yearly Conference & Education Stipend",
+        "12 Paid Holidays",
+      ],
+    };
+  },
   mounted() {
     scrollTo({ top: 0, behavior: "smooth" });
   },
-  components: { Footer },
 };
 </script>
 

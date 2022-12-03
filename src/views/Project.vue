@@ -4,8 +4,11 @@
   </div>
   <div v-else><title>Megatron</title></div>
 
-  <div v-if="projectData" class="bg-[url(/bgstarstexture.png)]">
-    <div class="from-[#0a0020bb] to-[#0000009f] bg-gradient-to-b min-h-screen">
+  <div v-if="projectData">
+    <div
+      class="min-h-screen"
+      :style="`background: linear-gradient(${projectData.bgColor}, #000000)`"
+    >
       <header class="relative">
         <div class="h-[40vh] md:h-[60vh] overflow-hidden relative">
           <img
@@ -47,11 +50,11 @@
           </div>
         </div>
       </header>
-      <section aria-label="Project details" class="py-10 px-[5vw] md:px-[10vw]">
+      <section aria-label="Project details" class="py-10">
         <ul
           v-if="projectData.providedServices"
           aria-label="Provided services"
-          class="flex flex-wrap gap-4 md:gap-14"
+          class="flex flex-wrap gap-4 md:gap-14 px-[5vw] md:px-[10vw]"
         >
           <li
             v-for="service in projectData.providedServices"
@@ -61,13 +64,11 @@
             {{ service }}
           </li>
         </ul>
-        <div class="project-details-body">
-          <div>
-            <sanity-blocks :blocks="projectData.body" />
-          </div>
-          <div>
-            <sanity-blocks :blocks="projectData.body2" />
-          </div>
+        <div class="project-details-body" v-if="projectData.body">
+          <sanity-blocks
+            :blocks="projectData.body"
+            :serializers="serializers"
+          />
         </div>
       </section>
     </div>
@@ -78,22 +79,16 @@
 <script>
 import Footer from "../components/Footer.vue";
 import sanity from "../clients/sanity";
-// import { h } from "vue";
-// import { url } from "inspector";
+import SanityImage from "../components/sanity/SanityImage.vue";
 
 export default {
   components: { Footer },
   data() {
     return {
       projectData: null,
-      // projectId: "62b0cf58-ecbf-4c72-9075-2ac0e244e102",
       serializers: {
         types: {
-          image: (data) => {
-            console.log(data);
-            // return h("image", { src: data.asset.url });
-            // return `<image src='${data.url()}'></image>`;
-          },
+          image: SanityImage,
         },
       },
     };
@@ -103,27 +98,53 @@ export default {
     this.getData();
   },
   methods: {
-    // imageUrlFor(source) {
-    //   return imageBuilder.image(source);
-    // },
     getData() {
-      const query = `*[_type=="project"][_id == '${this.$route.params.id}' ]{_id,title,description,"coverImageURL": coverImage.asset->url, body2, body[]{
+      const query = `*[_type=="project"][_id == '${this.$route.params.id}' ]{_id,title,description, bgColor,"coverImageURL": coverImage.asset->url, body[]{
     ...,
     _type == "image" => {
       ...,
-      asset->
+      asset->{url}
     }
   }, providedServices}`;
 
-      sanity.fetch(query).then((res) => {
-        this.projectData = res[0];
-        // console.log(res[0]);
-        console.log("Done!");
-      });
+      sanity
+        .fetch(query)
+        .then((res) => {
+          this.projectData = res[0];
+        })
+        .then(() => {
+          scrollTo({ top: 0, behavior: "smooth" });
+        });
     },
   },
 };
 </script>
 
 <style>
+.project-details-body {
+  /* for customizing sanity block content */
+}
+.project-details-body p:not(:empty) {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.project-details-body img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  pointer-events: none;
+}
+@media (min-width: 780px) {
+  .project-details-body p:not(:empty) {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    padding-right: 15vw;
+    padding-left: 15vw;
+  }
+  .project-details-body img {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+  }
+}
 </style>

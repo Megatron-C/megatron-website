@@ -106,18 +106,18 @@ export default {
           desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
         },
         {
-          title: "Who we are",
+          title: "What we do",
           desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
         },
         {
-          title: "Who we are",
+          title: "How we do it",
           desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
         },
       ],
       pledgesData: [
-        { text: "we do something", color: "#ccc" },
-        { text: "we dont do bad things", color: "#555" },
-        { text: "we are great at what we do", color: "#999" },
+        { text: "Familiarity", color: "#1a252a" },
+        { text: "Surprise", color: "#281917" },
+        { text: "Context", color: "#2e2e1b" },
       ],
     };
   },

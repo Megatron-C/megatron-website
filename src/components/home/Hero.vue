@@ -1,6 +1,6 @@
 <template>
-  <div class="h-[90vh] relative">
-    <div class="h-full flex items-center justify-center">
+  <div class="relative pt-24">
+    <div class="h-full flex items-center justify-center pb-6">
       <div>
         <h1
           class="
@@ -24,7 +24,7 @@
           labore, amet nisi repudiandae beatae.
         </p>
       </div>
-      <div class="absolute bottom-1 arrow-bounce">
+      <!-- <div class="absolute bottom-1 arrow-bounce">
         <svg
           width="24"
           height="115"
@@ -37,13 +37,16 @@
             fill="white"
           />
         </svg>
-      </div>
+      </div> -->
     </div>
+    <HeroAnimation />
   </div>
 </template>
 
 <script>
-export default {};
+import HeroAnimation from "../../assets/HeroAnimation.vue";
+
+export default { components: { HeroAnimation } };
 </script>
 
 <style scoped>

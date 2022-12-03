@@ -53,8 +53,6 @@ export default {
 
       sanity.fetch(query).then((res) => {
         this.projectsData = res;
-        // console.log(res);
-        console.log("Done!");
       });
     },
   },

@@ -9,7 +9,7 @@ import Navbar from "./components/navigationbar/Navbar.vue";
 <template>
   <div class="bg-[#181818] min-h-screen text-white">
     <Navbar />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
