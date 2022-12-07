@@ -1,6 +1,6 @@
 <template>
   <div class="relative pt-24">
-    <div class="h-full flex items-center justify-center pb-6">
+    <div class="h-full flex items-center justify-center py-11">
       <div>
         <h1
           class="
@@ -10,18 +10,15 @@
             uppercase
             font-druk-text-wide-trial font-black
             lg:leading-[85px]
-            mb-6
-            lg:mb-11
+            my-6
+            lg:my-11
           "
         >
           Design & <br />
           Development.
         </h1>
-        <p class="text-center font-light max-w-[950px]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-          officiis obcaecati perspiciatis illum officia fugiat reiciendis
-          pariatur nostrum harum soluta tempora omnis quaerat inventore eveniet
-          labore, amet nisi repudiandae beatae.
+        <p class="text-center text-lg	 font-light max-w-[950px]">
+          We design Remarkable Brand and impactful Digital Experiences for innovative companies around the world.
         </p>
       </div>
       <!-- <div class="absolute bottom-1 arrow-bounce">

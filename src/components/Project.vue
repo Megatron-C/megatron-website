@@ -8,8 +8,9 @@
         overflow-hidden
         w-full
         h-full
-        group-hover:blur-[30px]
-        duration-[1500ms]
+        opacity-25
+        group-hover:blur-[40px]
+        duration-[400ms]
       "
     >
       <img
@@ -18,7 +19,7 @@
         :alt="projectData.title"
       />
     </div>
-    <div class="aspect-[2/1] overflow-hidden relative">
+    <div class="  rounded-[1px] aspect-[2/1] overflow-hidden relative">
       <img
         class="w-full h-full object-cover"
         :src="projectData.coverImageURL"
@@ -27,6 +28,7 @@
     </div>
     <div
       class="
+    
         pt-5
         md:p-14
         flex flex-col
@@ -43,16 +45,17 @@
           class="
             font-black
             text-xl
+            md:w-[45%]
             md:text-5xl
             font-druk-text-wide-trial
-            md:w-[50%]
+            
             mb-6
             md:mb-8
           "
         >
           {{ projectData.title }}
         </h3>
-        <p class="text-xl md:w-[50%] mb-4 md:mb-8">
+        <p class="text-xl md:w-[45%] mb-4 md:mb-8">
           {{ projectData.description }}
         </p>
         <router-link
@@ -62,7 +65,7 @@
             font-druk-trial
             uppercase
             text-lg
-            md:text-3xl
+            md:text-sm
             font-bold
             flex
             items-center
@@ -73,7 +76,7 @@
         >
           view project
           <svg
-            class="inline ml-2 w-6 md:w-11"
+            class="inline ml-1 w-0.5 md:w-6"
             width="100%"
             height="100%"
             viewBox="0 0 43 24"

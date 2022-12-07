@@ -117,7 +117,7 @@
       <g id="line-masks">
         <g>
           <rect
-            width="112"
+            width="142"
             height="54"
             rx="32"
             fill="#fffc"
@@ -128,20 +128,21 @@
             stroke-miterlimit="10"
           ></rect>
           <text
-            x="187.487"
+            x="202.487"
             y="366.455"
             fill="#000"
             text-anchor="middle"
             font-size="20"
             font-family="Druk Text Trial"
             font-weight="500"
+
           >
             Technology
           </text>
         </g>
         <g>
           <rect
-            width="265"
+            width="305"
             height="54"
             rx="32"
             fill="#fffc"
@@ -150,12 +151,12 @@
             stroke="#AEAEAE"
             stroke-width="1"
             stroke-miterlimit="10"
-            stroke-dasharray="3 3"
+            
             class="css-1i8jgf1 e3qasdv0"
             style="/* background: black; */"
           ></rect>
           <text
-            x="671.28"
+            x="691.28"
             y="118.8816"
             fill="#000"
             text-anchor="middle"
@@ -168,7 +169,7 @@
         </g>
         <g>
           <rect
-            width="174"
+            width="214"
             height="54"
             rx="32"
             fill="#fffc"
@@ -177,12 +178,11 @@
             stroke="#AEAEAE"
             stroke-width="1"
             stroke-miterlimit="10"
-            stroke-dasharray="3 3"
             class="css-1i8jgf1 e3qasdv0"
             style="stroke: white"
           ></rect>
           <text
-            x="1100.83"
+            x="1120.83"
             y="116.378"
             fill="#000"
             text-anchor="middle"
@@ -195,7 +195,7 @@
         </g>
         <g>
           <rect
-            width="210"
+            width="250"
             height="54"
             rx="32"
             fill="#fffc"
@@ -204,11 +204,10 @@
             stroke="#AEAEAE"
             stroke-width="1"
             stroke-miterlimit="10"
-            stroke-dasharray="3 3"
             class="css-1i8jgf1 e3qasdv0"
           ></rect>
           <text
-            x="1178.28"
+            x="1198.28"
             y="380.116"
             fill="#000"
             text-anchor="middle"

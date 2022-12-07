@@ -15,8 +15,7 @@
         <section aria-label="Identification" class="my-28">
           <div class="pb-28">
             <h1 hidden>Identification</h1>
-            <h2
-              class="
+            <h2 class="
                 text-3xl
                 md:text-4xl
                 lg:text-7xl
@@ -25,8 +24,7 @@
                 lg:leading-[85px]
                 mb-6
                 lg:mb-11
-              "
-            >
+              ">
               Better.<br />
               Stronger.
             </h2>
@@ -35,7 +33,7 @@
             <li v-for="(item, index) in identificationData" :key="index">
               <div class="md:flex gap-28 my-20">
                 <div>
-                  <h3 class="min-w-max uppercase text-xl md:text-3xl mb-4">
+                  <h3 class="font-druk-text-wide-trial min-w-max uppercase text-xl md:text-2xl mb-4">
                     {{ item.title }}
                   </h3>
                 </div>
@@ -48,8 +46,7 @@
         </section>
         <section aria-label="Pledges" class="my-28">
           <h1 hidden>Pledges</h1>
-          <h2
-            class="
+          <h2 class="
               text-3xl
               md:text-4xl
               lg:text-7xl
@@ -58,32 +55,30 @@
               lg:leading-[85px]
               mb-6
               lg:mb-11
-            "
-          >
+            ">
             OUR <br />
             THREE <br />
             PLEDGES
           </h2>
           <ul class="grid md:grid-cols-3 gap-6">
-            <li
-              v-for="(item, index) in pledgesData"
-              :key="index"
-              :style="{ backgroundColor: item.color }"
-            >
-              <div
-                class="
+            <li v-for="(item, index) in pledgesData" :key="index" :style="{ backgroundColor: item.color }">
+              <div class="
                   w-full
-                  h-[40vh]
                   md:h-[80vh]
-                  flex
-                  items-center
-                  justify-center
                   p-7
-                "
-              >
-                <h3 class="text-xl md:text-3xl font-bold uppercase">
+                ">
+                <h3 class="text-3xl   md:text-xl lg:text-3xl font-druk-text-wide-trial font-black uppercase   block">
                   {{ item.text }}
+
+
+
                 </h3>
+                <p class="
+                mt-8
+                text-sm
+
+                ">{{ item.desc }}</p>
+
               </div>
             </li>
           </ul>
@@ -103,21 +98,39 @@ export default {
       identificationData: [
         {
           title: "Who we are",
-          desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
+          desc: "We are a creative force, run by creatives to put a dent in corporate business conventions and vanquish design mediocrity; we’re driven by a magnetic culture, with empowered people as our lifeblood.",
         },
         {
-          title: "What we do",
-          desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
+          title: "What we do",
+          desc: "At the heart of Bulletproof is a strategic force like no other: a source of information, inspiration and the straightest line to the best possible creative work.",
         },
         {
-          title: "How we do it",
-          desc: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it.",
+          title: "How we do it",
+          desc: "Sensory Brand World forms the bedrock of all our creative output via a human-centric approach.",
         },
       ],
       pledgesData: [
-        { text: "Familiarity", color: "#1a252a" },
-        { text: "Surprise", color: "#281917" },
-        { text: "Context", color: "#2e2e1b" },
+        {
+          text: "Familiarity", color: "#1a252a",
+          desc: "The degree to which a customer recognizes brand components and views their interaction as natural; the similarity of the interface to concrete objects the user has interacted with in the past. brand identity can be familiar by mimicking the visual appearance of real-world objects, by relying on standardized commands, or by following other common metaphors.",
+        },
+        {
+          text: "Surprise", color: "#281917",
+          desc: "A surprise reaction to a product can be beneficial to both the clint and a user. The clint benefits from a surprise reaction because it can capture attention to the product, leading to increased product recall and recognition, and increased word-of-mouth. Or it can be described as, the surprise element elevates a piece beyond the banal. A surprise reaction has its origin in encountering an unexpected event. The product user benefits from the surprise, because it makes the product more interesting to interact with.",
+        },
+        {
+          text: "Context", color: "#2e2e1b",
+          desc: "Context is when to be familiar and when to be fun, it needs to be keen on creating useful designs that suit the context of how and where users are using them.",
+        },
+
+
+
+
+
+
+
+
+
       ],
     };
   },
@@ -129,4 +142,5 @@ export default {
 </script>
 
 <style>
+
 </style>

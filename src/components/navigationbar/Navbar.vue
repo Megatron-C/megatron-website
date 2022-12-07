@@ -133,6 +133,6 @@ export default {
 
 <style>
 .custom-drop-shadow {
-  filter: drop-shadow(0.2rem 0.2rem 0.1rem #000000);
+  filter: drop-shadow(0.2rem 0.2rem 0.2rem #00000071);
 }
 </style>

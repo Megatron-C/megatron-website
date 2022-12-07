@@ -2,23 +2,17 @@
   <div v-if="projectData">
     <title>Megatron - {{ projectData.title }}</title>
   </div>
-  <div v-else><title>Megatron</title></div>
+  <div v-else>
+    <title>Megatron</title>
+  </div>
 
   <div v-if="projectData">
-    <div
-      class="min-h-screen"
-      :style="`background: linear-gradient(${projectData.bgColor}, #000000)`"
-    >
+    <div class="min-h-screen" :style="`background: linear-gradient(${projectData.bgColor}, #000000)`">
       <header class="relative">
-        <div class="h-[40vh] md:h-[60vh] overflow-hidden relative">
-          <img
-            class="w-full h-full object-cover"
-            :src="projectData.coverImageURL"
-            :alt="projectData.title"
-          />
+        <div class="h-[70vh] md:h-[90vh] overflow-hidden relative">
+          <img class="w-full h-full object-cover" :src="projectData.coverImageURL" :alt="projectData.title" />
         </div>
-        <div
-          class="
+        <div class="
             mt-auto
             p-5
             md:p-14
@@ -29,19 +23,16 @@
             top-0
             h-full
             w-full
-          "
-        >
+          ">
           <div class="w-full">
-            <h1
-              class="
+            <h1 class="
                 font-black
-                text-xl
+                text-xl 
                 md:text-5xl
                 font-druk-text-wide-trial
                 mb-3
                 md:mb-8
-              "
-            >
+              ">
               {{ projectData.title }}
             </h1>
             <p class="md:text-xl">
@@ -51,24 +42,15 @@
         </div>
       </header>
       <section aria-label="Project details" class="py-10">
-        <ul
-          v-if="projectData.providedServices"
-          aria-label="Provided services"
-          class="flex flex-wrap gap-4 md:gap-14 px-[5vw] md:px-[10vw]"
-        >
-          <li
-            v-for="service in projectData.providedServices"
-            :key="service"
-            class="font-druk-text-wide-trial font-medium md:text-xl"
-          >
+        <ul v-if="projectData.providedServices" aria-label="Provided services"
+          class="flex flex-wrap gap-4 md:gap-14 px-[5vw] md:px-[10vw]">
+          <li v-for="service in projectData.providedServices" :key="service"
+            class="font-druk-text-wide-trial font-medium md:text-xl">
             {{ service }}
           </li>
         </ul>
         <div class="project-details-body" v-if="projectData.body">
-          <sanity-blocks
-            :blocks="projectData.body"
-            :serializers="serializers"
-          />
+          <sanity-blocks :blocks="projectData.body" :serializers="serializers" />
         </div>
       </section>
     </div>
@@ -124,17 +106,20 @@ export default {
 .project-details-body {
   /* for customizing sanity block content */
 }
+
 .project-details-body p:not(:empty) {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
+
 .project-details-body img {
   margin-top: 2rem;
   margin-bottom: 2rem;
   pointer-events: none;
 }
+
 @media (min-width: 780px) {
   .project-details-body p:not(:empty) {
     margin-top: 4.5rem;
@@ -142,6 +127,7 @@ export default {
     padding-right: 15vw;
     padding-left: 15vw;
   }
+
   .project-details-body img {
     margin-top: 4.5rem;
     margin-bottom: 4.5rem;
