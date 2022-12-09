@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router"
 
 var history = require('connect-history-api-fallback');
-var connect = require('connect');
 
-var app = connect()
-  .use(history())
-  .listen(3000);
+// var connect = require('connect');
+
+// var app = connect()
+//   .use(history())
+//   .listen(3000);
+
+var connect = require('connect')
+var http = require('http')
+var https = require('https');
+
+var app = connect();
+
+http.createServer(app).listen(80);
+https.createServer(options, app).listen(443);
 
 
 const HomePage = () => import('../views/Home.vue')
