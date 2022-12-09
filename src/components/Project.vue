@@ -1,5 +1,5 @@
 <template>
-  <div class="my-16 relative group" tabindex="0">
+  <div class="my-16 relative group">
     <div
       class="
         hidden
@@ -8,9 +8,9 @@
         overflow-hidden
         w-full
         h-full
-        opacity-25
+        opacity-20
         group-hover:blur-[40px]
-        duration-[400ms]
+        duration-[700ms]
       "
     >
       <img
@@ -19,7 +19,8 @@
         :alt="projectData.title"
       />
     </div>
-    <div class="  rounded-[1px] aspect-[2/1] overflow-hidden relative">
+
+    <div class="rounded-[1px] aspect-[2/1] overflow-hidden relative">
       <img
         class="w-full h-full object-cover"
         :src="projectData.coverImageURL"
@@ -28,7 +29,6 @@
     </div>
     <div
       class="
-    
         pt-5
         md:p-14
         flex flex-col
@@ -45,10 +45,8 @@
           class="
             font-black
             text-xl
-            md:w-[45%]
-            md:text-5xl
+            md:w-[45%] md:text-5xl
             font-druk-text-wide-trial
-            
             mb-6
             md:mb-8
           "
@@ -71,6 +69,7 @@
             items-center
             gap-1
             hover:gap-3
+            md:group-hover:gap-3
             duration-300
           "
         >
@@ -91,6 +90,11 @@
         </router-link>
       </div>
     </div>
+    <router-link
+      :to="`/project/${projectData._id}`"
+      class="md:absolute top-0 w-full h-full"
+    >
+    </router-link>
   </div>
 </template>
 

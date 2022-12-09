@@ -24,7 +24,7 @@
 
       <div>
         <div v-for="(item, index) in navLinks" :key="index">
-          <router-link :to="item.link" @click="scrollTop"
+          <router-link :to="item.link" tabindex="-1" @click="scrollTop"
             ><div
               class="
                 py-6
@@ -42,7 +42,7 @@
           >
         </div>
         <div>
-          <router-link to="/contact" @click="scrollTop"
+          <router-link tabindex="-1" to="/contact" @click="scrollTop"
             ><div
               class="
                 py-6

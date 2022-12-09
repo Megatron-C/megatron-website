@@ -120,7 +120,8 @@
                 class="uppercase font-druk-text-wide-trial text-lg"
                 >description</label
               >
-              <input
+              <textarea
+                cols="1"
                 id="desc"
                 type="text"
                 placeholder="About the project"
@@ -193,7 +194,12 @@ export default {
   components: { Footer },
   data() {
     return {
-      services: ["design", "logo", "UI", "UX"],
+      services: [
+        "Product or Website",
+        "Branding",
+        "Product + Branding",
+        "Other",
+      ],
       budgets: ["$5,000+", "$10,000+", "$50,000+", "$100,000+"],
       userName: null,
       email: null,
