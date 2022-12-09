@@ -36,6 +36,15 @@
 
 <body>
   <div id="app"></div>
+  <script>
+    var history = require('connect-history-api-fallback');
+
+    var connect = require('connect');
+
+    var app = connect()
+      .use(history())
+      .listen(3000);
+  </script>
   <script type="module" src="/src/main.js"></script>
 </body>
 

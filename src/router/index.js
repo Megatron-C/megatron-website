@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 
-var history = require('connect-history-api-fallback');
+// var history = require('connect-history-api-fallback');
 
 // var connect = require('connect');
 
@@ -8,14 +8,15 @@ var history = require('connect-history-api-fallback');
 //   .use(history())
 //   .listen(3000);
 
-var connect = require('connect')
-var http = require('http')
-var https = require('https');
+// var connect = require('connect')
+// var http = require('http')
+// var https = require('https');
 
-var app = connect();
+// var app = connect();
+// app
 
-http.createServer(app).listen(80);
-https.createServer(options, app).listen(443);
+// http.createServer(app).listen(80);
+// https.createServer(options, app).listen(443);
 
 
 const HomePage = () => import('../views/Home.vue')
