@@ -42,6 +42,7 @@
                 hover:border-b-white
                 duration-300
               "
+              :class="{ 'border-b-white': $route.path == item.link }"
             >
               {{ item.text }}
             </div></router-link
@@ -62,6 +63,10 @@
                 hover:bg-transparent hover:text-white hover:border-b-white
                 duration-300
               "
+              :class="{
+                'border-b-white bg-transparent text-[#fff]':
+                  $route.path == '/contact',
+              }"
             >
               Contact
             </div></router-link

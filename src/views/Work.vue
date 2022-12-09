@@ -1,6 +1,6 @@
 <template>
   <title>What Megatron did</title>
-  <div class="bg-[url(/bgstarstexture.png)] relative">
+  <div v-if="projectsData" class="bg-[url(/bgstarstexture.png)] relative">
     <div class="absolute bottom-4 px-[5vw] md:px-[20vw] w-full">
       <img src="/bgshape2.png" alt="" class="w-full" />
     </div>
@@ -27,6 +27,9 @@
       </section>
     </div>
   </div>
+  <div v-else class="min-h-screen bg-[#000] flex items-center justify-center">
+    <Loader />
+  </div>
   <Footer />
 </template>
 
@@ -34,9 +37,10 @@
 import Footer from "../components/Footer.vue";
 import Project from "../components/Project.vue";
 import sanity from "../clients/sanity";
+import Loader from "../assets/Loader.vue";
 
 export default {
-  components: { Project, Footer },
+  components: { Project, Footer, Loader },
   data() {
     return {
       projectsData: null,

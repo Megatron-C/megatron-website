@@ -211,7 +211,7 @@ export default {
   methods: {
     setVideoPlaySpeed() {
       let vid = document.getElementById("contact-video");
-      vid.playbackRate = 0.3;
+      vid.playbackRate = 0.7;
     },
     async addClient() {
       this.buttonLoading = true;

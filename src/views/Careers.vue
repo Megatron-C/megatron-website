@@ -11,7 +11,8 @@
       <div class="xl:px-[13%] lg:px-[8%] px-6 py-24">
         <section aria-label="Careers" class="my-28">
           <h1 hidden>Join us</h1>
-          <h2 class="
+          <h2
+            class="
               text-3xl
               md:text-4xl
               lg:text-7xl
@@ -20,28 +21,36 @@
               lg:leading-[85px]
               mb-6
               lg:mb-11
-            ">
+            "
+          >
             Make things better with us.
           </h2>
           <p>
-            At Megatron, we are a tight knit group of designers, developers, photographers, and storytellers. We know
-            how to work hard and have fun doing it. We know that our work doesn’t define us, but it’s an outward
-            expression of our passions. We strive to create a healthy environment that helps our team live the life they
-            want and work with rad clients.We are always looking for humble creatives who want to work together to push
-            their craft and inspire one another.
+            At Megatron, we are a tight knit group of designers, developers,
+            photographers, and storytellers. We know how to work hard and have
+            fun doing it. We know that our work doesn’t define us, but it’s an
+            outward expression of our passions. We strive to create a healthy
+            environment that helps our team live the life they want and work
+            with rad clients.We are always looking for humble creatives who want
+            to work together to push their craft and inspire one another.
           </p>
         </section>
       </div>
       <div class="bg-white text-black">
-        <section aria-label="Benefits" class="xl:px-[13%] lg:px-[8%] px-6 py-24">
-          <h1 class="
+        <section
+          aria-label="Benefits"
+          class="xl:px-[13%] lg:px-[8%] px-6 py-24"
+        >
+          <h1
+            class="
               text-2xl
               lg:text-4xl
               uppercase
               font-druk-text-wide-trial font-black
               lg:leading-[85px]
               mb-11
-            ">
+            "
+          >
             Benefits We Offer
           </h1>
           <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-9">
@@ -54,31 +63,38 @@
         </section>
       </div>
       <div class="xl:px-[13%] lg:px-[8%] px-6 py-24">
-        <section aria-label="positions" class="flex flex-col md:flex-row gap-16">
+        <section
+          aria-label="positions"
+          class="flex flex-col md:flex-row gap-16"
+        >
           <div>
             <h1 hidden>Positions</h1>
-            <h2 class="
+            <h2
+              class="
                 text-2xl
                 lg:text-4xl
                 uppercase
                 font-druk-text-wide-trial font-black
                 mb-11
-              ">
+              "
+            >
               No Open Positions
             </h2>
-            <p class="
+            <p
+              class="
                 text-lg
                 lg:text-xl
                 uppercase
                 font-druk-text-wide-trial font-black
                 mb-4
-              ">
+              "
+            >
               We currently don’t have any open positions at this moment.
             </p>
-            <p>
+            <!-- <p>
               If you’re looking to be a part of the Megatron team, make sure
               you sign up for job notifications or reach out to us.
-            </p>
+            </p> -->
           </div>
           <div>
             <!-- <div class="mb-12">
@@ -111,7 +127,8 @@
               </h3>
 
               <a href="mailto:careers@wearemegatron.com">
-                <div class="
+                <div
+                  class="
                     font-druk-text-wide-trial font-black
                     py-2
                     px-5
@@ -122,7 +139,8 @@
                     text-black
                     hover:bg-black hover:text-white
                     duration-500
-                  ">
+                  "
+                >
                   Get In Touch
                 </div>
               </a>
@@ -170,5 +188,4 @@ export default {
 </script>
 
 <style>
-
 </style>

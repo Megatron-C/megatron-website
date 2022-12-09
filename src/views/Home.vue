@@ -19,19 +19,22 @@
 
           <div class="flex flex-col md:flex-row justify-between gap-9">
             <div class="md:w-1/2">
-              <p class="
+              <p
+                class="
                   font-druk-text-wide-trial font-black
                   text-2xl
                   md:text-3xl
                   uppercase
-                ">
+                "
+              >
                 Dig into a few of our most impactful projects.
               </p>
             </div>
             <div class="">
-              <p class=" font-bold pb-7">Ready to see more?</p>
+              <p class="font-bold pb-7">Ready to see more?</p>
               <router-link to="/work" class="w-fit">
-                <div class="
+                <div
+                  class="
                     font-durk-trail
                     rounded-[1px]
                     bg-white
@@ -45,7 +48,8 @@
                     py-3
                     px-12
                     w-fit
-                  ">
+                  "
+                >
                   View Our Work
                 </div>
               </router-link>
@@ -53,23 +57,17 @@
           </div>
         </section>
         <div class="py-14">
-          <p class="
-            text-center 
-            text-6xl
-            uppercase
-            font-druk-text-wide-trial font-black
-            lg:leading-[85px]
-            ">
-            <!-- “We must all obey the great law of change. It is the most powerful
-            law of nature.” -->
+          <p
+            class="
+              text-center text-xl
+              md:text-3xl
+              lg:text-6xl
+              uppercase
+              font-druk-text-wide-trial font-black
+              lg:leading-[85px]
+            "
+          >
             Ready to transform your business?
-            <!-- <span class="text-xs md:text-sm"
-              ><a
-                href="https://en.wikipedia.org/wiki/Edmund_Burke"
-                target="_blank"
-                >— EDMUND BURKE</a
-              ></span
-            > -->
           </p>
         </div>
       </div>
@@ -110,5 +108,4 @@ export default {
 </script>
 
 <style>
-
 </style>
